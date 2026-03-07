@@ -7,81 +7,61 @@
   src: url("/fonts/Saudagar.ttf") format("ttf");
 }
 
-.italiana-regular {
-  font-family: "Saudagar", "Italiana", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
+.italiana-regular {  font-family: "Saudagar", "Italiana", sans-serif;}
 // <weight>: Use a value from 200 to 900
 // <uniquifier>: Use a unique and descriptive class name
-.chiron-sung-hk {
-  font-family: "Chiron Sung HK", serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.monsieur-la-doulaise-regular {
-  font-family: "Monsieur La Doulaise", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.times-new-roman {
-  font-family: "Times New Roman", Times, serif;
-}
+.chiron-sung-hk {  font-family: "Chiron Sung HK", serif;}
+.monsieur-la-doulaise-regular {  font-family: "Monsieur La Doulaise", cursive;}
+.times-new-roman {  font-family: "Times New Roman", Times, serif;}
 
 /** Color **/
 // 定義變量
-$primary-color: #974315;
-$secondary-color: #778899;
+$primary-color:    #974315;
+$secondary-color:  #778899;
 $background-color: #fcf2ed;
-$text-color: #8d957e;
+$text-color:       #8d957e;
 
-#hero, .name, .date{ color: $primary-color;}
-.rol, .b, .c{ color: $secondary-color;}
-.rol, .b, .c{ color: $text-color;}
+#hero, .name, .date {  color: $primary-color;}
+.rol, .b, .c, .rundown {  color: $secondary-color;}
+.rol, .b, .c .rundown {  color: $text-color;}
+.bg-color { background-color: $background-color;}
 
 /*排版*/
-.pt-6{padding-top: 4rem;}
-.pt-7{padding-top: 6rem;}
-.pt-8{padding-top: 9rem;}
-.pb-6{padding-bottom: 4rem;}
-.pb-7{padding-bottom: 6rem;}
-.pb-8{padding-bottom: 8rem;}
+.pt-6 {  padding-top: 4rem;}
+.pt-7 {  padding-top: 6rem;}
+.pt-8 {  padding-top: 8rem;}
+.pt-9 {  padding-top: 9rem;}
+.pb-6 {  padding-bottom: 4rem;}
+.pb-7 {  padding-bottom: 6rem;}
+.pb-8 {  padding-bottom: 8rem;}
+.pb-9 {  padding-bottom: 9rem;}
+
+img{width: 100%;} 
 
 /** Section **/
 #hero {
   img {
-    width: 100%;
     display: block;
     border-radius: 60vw 60vw 0 0;
     z-index: -100;
   }
 }
-
 #wedding {
-  background-color: $background-color;
-  img {
-    width: 100%;
+  .container>img {
     display: block;
     margin: 0 auto;
+    width: clamp(460px, 60vw, 768px );
   }
 }
 
-.gallery{
-  .row{
+.gallery {
+  .row {
     position: relative;
-  }  
-  img{
-    width: 100%;
   }
-  .sticky{
+  .sticky {
     display: block;
     position: absolute;
-    bottom:-10%;
+    bottom: -10%;
     left: 50%;
   }
 }
@@ -90,11 +70,14 @@ $text-color: #8d957e;
   --min-size: 128;
   --max-size: 206;
   --font-size: calc(
-    (var(--min-size) * 1px) + 
-    (var(--max-size) - var(--min-size)) * 
-    ((100cqw - 320px) / (1920 - 320))
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) *
+      ((100cqw - 320px) / (1920 - 320))
   );
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  font-size: clamp(
+    var(--min-size) * 1px,
+    var(--font-size),
+    var(--max-size) * 1px
+  );
   line-height: clamp(112px, 11vw, 200px);
   position: absolute;
   top: 10vw;
@@ -104,70 +87,99 @@ $text-color: #8d957e;
   }
 }
 @media (min-width: 768px) {
-  .title{
-    position:static;}
+  .title {
+    position: static;
+  }
 }
-
 
 .subtitle {
   font-size: 2.5rem;
   text-align: right;
 }
 
-.b{
-  font-size: 0.875rem;}
+.b {
+  font-size: 0.875rem;
+}
 .c {
   font-size: 0.625rem;
   line-height: 1.125rem;
 }
 
-#day{
-  .row{
+#when {
+  >.row {
     position: relative;
-    align-items: end;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
   }
 }
-.month{
+.month, .day{
+  /*字體*/
   --min-size: 96;
   --max-size: 128;
   --font-size: calc(
-    (var(--min-size) * 1px) + 
-    (var(--max-size) - var(--min-size)) * 
-    ((100cqw - 320px) / (1920 - 320))
-  );
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
-  line-height: clamp(78px, 11vw, 120px);
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(  var(--min-size) * 1px,  var(--font-size),  var(--max-size) * 1px);  
+  /*位置*/
   text-align: right;
   display: flex;
-  align-items: flex-end; /* 子元素靠下對齊 */
+  position: relative;
+}
+.month {
+  line-height: clamp(60px, 10vw, 120px);
+  /*位置*/
+  align-items: end; /* 子元素靠下對齊 */
   height: 100%; /* 需設定高度 */
-  &::after{
+  &::after {
     content: "";
-    width: 100%;
+    width: 1px;
     height: 100%;
     box-sizing: border-box;
     border: 0.9px #974315 solid;
     transform: rotateZ(45deg);
+    position: absolute;
+    left: 92px;
+    bottom: -5px;
   }
 }
-.week{
-  --min-size: 20;
+.day {
+  line-height: clamp(85px, 11vw, 120px);
+  /*位置*/
+  position: relative;
+  align-items: top; /* 子元素靠上對齊 */
+  height: 100%; /* 需設定高度 */
+  &::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0.9px #974315 solid;
+    transform: rotateZ(45deg);
+    position: absolute;
+    left: 34px;
+    top: -15px;
+  }
+}
+.week {
+  --min-size: 24;
   --max-size: 32;
   --font-size: calc(
-    (var(--min-size) * 1px) + 
-    (var(--max-size) - var(--min-size)) * 
-    ((100cqw - 320px) / (1920 - 320))
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) *
+      ((100cqw - 320px) / (1920 - 320))
   );
-  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
-  line-height: clamp(20px, 9vw, 32px);
-  text-align: center;
-}
-.slash{
-  width: 80%;
-  height: 100%;
-  box-sizing: border-box;
-  border: 0.9px #974315 solid;
-  transform: rotateZ(135deg);
+  font-size: clamp( var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  line-height: clamp(32px, 10vw, 32px);
   position: relative;
-  bottom: 0%;
+  left: 2rem;
+  bottom: 5px;
+}
+
+.rundown{
+  justify-content: center;
+  .row{height: 3.5rem;align-content: stretch;}
+}
+.time {
+  font-size: calc(3.25rem + 1.5vw);
+  line-height: 3.5rem;
+  span{font-size: 1.375rem;}
 }
