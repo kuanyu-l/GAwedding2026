@@ -152,6 +152,7 @@ img {
   position: relative;
   align-items: end; /* 子元素靠下對齊 */
   height: 100%; /* 需設定高度 */
+  width: 100%;
   text-align: center;
   padding-right: 2rem;
 }
