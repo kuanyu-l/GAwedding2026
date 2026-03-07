@@ -6,7 +6,11 @@
   font-family: "Saudagar";
   src: url("/fonts/Saudagar.ttf") format("ttf");
 }
+<<<<<<< HEAD
 .logotype_en {
+=======
+.italiana-regular {
+>>>>>>> 8f0a28f7d48225fe259a5944875c1a40010f6df6
   font-family: "Saudagar", "Italiana", sans-serif;
 }
 
@@ -14,8 +18,13 @@
   font-family: "Chiron Sung HK", serif;
 }
 
+<<<<<<< HEAD
 .primary-font_en {
   font-family: "Garamond", "Georgia", "Times New Roman", Times, serif;
+=======
+.monsieur-la-doulaise-regular {
+  font-family: "Monsieur La Doulaise", cursive;
+>>>>>>> 8f0a28f7d48225fe259a5944875c1a40010f6df6
 }
 
 .secondary-font_en {
@@ -39,12 +48,25 @@
   color: #974315;
 }
 
+<<<<<<< HEAD
 .rol, #rundown {
   color: #778899;
 }
 
 p {
   color: #974315;
+}
+
+.bg-color {
+  background-color: #fcf2ed;
+=======
+.rol, .b, .c, .rundown {
+  color: #778899;
+}
+
+.rol, .b, .c .rundown {
+  color: #8d957e;
+>>>>>>> 8f0a28f7d48225fe259a5944875c1a40010f6df6
 }
 
 .bg-color {
@@ -98,7 +120,11 @@ img {
 #wedding .container > img {
   display: block;
   margin: 0 auto;
+<<<<<<< HEAD
   width: clamp(350px, 60vw, 768px);
+=======
+  width: clamp(460px, 60vw, 768px);
+>>>>>>> 8f0a28f7d48225fe259a5944875c1a40010f6df6
 }
 
 .gallery .row {
@@ -154,8 +180,41 @@ img {
   padding-right: 2rem;
 }
 
+<<<<<<< HEAD
 .month {
   /*位置*/
+=======
+.c {
+  font-size: 0.625rem;
+  line-height: 1.125rem;
+}
+
+#when > .row {
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.month, .day {
+  /*字體*/
+  --min-size: 96;
+  --max-size: 128;
+  --font-size: calc(
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  /*位置*/
+  text-align: right;
+  display: flex;
+  position: relative;
+}
+
+.month {
+  line-height: clamp(60px, 10vw, 120px);
+  /*位置*/
+  align-items: end; /* 子元素靠下對齊 */
+  height: 100%; /* 需設定高度 */
+>>>>>>> 8f0a28f7d48225fe259a5944875c1a40010f6df6
 }
 .month::after {
   content: "";
@@ -165,6 +224,7 @@ img {
   border: 0.9px #974315 solid;
   transform: rotateZ(45deg);
   position: absolute;
+<<<<<<< HEAD
   left: 48%;
   bottom: -18px;
 }
@@ -173,6 +233,29 @@ img {
   position: absolute;
   top: 58px;
   left: 47%;
+=======
+  left: 92px;
+  bottom: -5px;
+}
+
+.day {
+  line-height: clamp(85px, 11vw, 120px);
+  /*位置*/
+  position: relative;
+  align-items: top; /* 子元素靠上對齊 */
+  height: 100%; /* 需設定高度 */
+}
+.day::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0.9px #974315 solid;
+  transform: rotateZ(45deg);
+  position: absolute;
+  left: 34px;
+  top: -15px;
+>>>>>>> 8f0a28f7d48225fe259a5944875c1a40010f6df6
 }
 
 .week {
@@ -185,6 +268,7 @@ img {
   font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
   line-height: clamp(32px, 10vw, 32px);
   position: relative;
+<<<<<<< HEAD
   left: 3.5rem;
   bottom: 30px;
 }
@@ -206,4 +290,24 @@ img {
   align-items: center;
   display: flex;
   flex-direction: column;
+=======
+  left: 2rem;
+  bottom: 5px;
+}
+
+.rundown {
+  justify-content: center;
+}
+.rundown .row {
+  height: 3.5rem;
+  align-content: stretch;
+}
+
+.time {
+  font-size: calc(3.25rem + 1.5vw);
+  line-height: 3.5rem;
+}
+.time span {
+  font-size: 1.375rem;
+>>>>>>> 8f0a28f7d48225fe259a5944875c1a40010f6df6
 }/*# sourceMappingURL=all.css.map */
