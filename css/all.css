@@ -6,37 +6,49 @@
   font-family: "Saudagar";
   src: url("/fonts/Saudagar.ttf") format("ttf");
 }
-.saudagar {
-  font-family: "Saudagar";
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+.logotype_en {
+  font-family: "Saudagar", "Italiana", sans-serif;
 }
 
-.chiron-sung-hk {
+.primary-font_td {
   font-family: "Chiron Sung HK", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
 }
 
-.monsieur-la-doulaise-regular {
-  font-family: "Monsieur La Doulaise", cursive;
-  font-weight: 400;
-  font-style: normal;
+.primary-font_en {
+  font-family: "Garamond", "Georgia", "Times New Roman", Times, serif;
 }
 
-.times-new-roman {
-  font-family: "Times New Roman", Times, serif;
+.secondary-font_en {
+  font-family: "Monsieur La Doulaise", "Apple Chancery", cursive, serif;
+}
+
+.fs-7 {
+  font-size: 0.875rem;
+}
+
+.fs-8 {
+  font-size: 0.75rem;
+}
+
+.fs-9 {
+  font-size: 0.5rem;
 }
 
 /** Color **/
-#hero, .name {
+#hero, .name, .date {
   color: #974315;
 }
 
-.rolㄝ, .b, .c {
-  color: #8d957e;
+.rol, #rundown {
+  color: #778899;
+}
+
+p {
+  color: #974315;
+}
+
+.bg-color {
+  background-color: #fcf2ed;
 }
 
 /*排版*/
@@ -48,6 +60,14 @@
   padding-top: 6rem;
 }
 
+.pt-8 {
+  padding-top: 8rem;
+}
+
+.pt-9 {
+  padding-top: 9rem;
+}
+
 .pb-6 {
   padding-bottom: 4rem;
 }
@@ -56,50 +76,134 @@
   padding-bottom: 6rem;
 }
 
+.pb-8 {
+  padding-bottom: 8rem;
+}
+
+.pb-9 {
+  padding-bottom: 9rem;
+}
+
+img {
+  width: 100%;
+}
+
 /** Section **/
 #hero img {
-  width: 100%;
   display: block;
-  border-radius: 14rem 14rem 0 0;
+  border-radius: 60vw 60vw 0 0;
   z-index: -100;
 }
 
-#wedding {
-  background-color: #fcf2ed;
-}
-#wedding img {
-  width: 100%;
+#wedding .container > img {
   display: block;
   margin: 0 auto;
+  width: clamp(350px, 60vw, 768px);
+}
+
+.gallery .row {
+  position: relative;
+}
+.gallery .sticky {
+  display: block;
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
 }
 
 .title {
-  --min-size: 96;
-  --max-size: 128;
+  --min-size: 128;
+  --max-size: 206;
   --font-size: calc(
-    (var(--min-size) * 1px) +
-    (var(--max-size) - var(--min-size)) *
-    ((100cqw - 320px) / (1920 - 320))
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) *
+      ((100cqw - 320px) / (1920 - 320))
   );
   font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
-  line-height: clamp(80px, 8vw, 96px);
+  line-height: clamp(112px, 11vw, 200px);
   position: absolute;
-  top: 1rem;
+  top: 10vw;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 .title span {
   font-size: 0.5em;
 }
 
+@media (min-width: 768px) {
+  .title {
+    position: static;
+  }
+}
 .subtitle {
+  font-size: 2.5rem;
   text-align: right;
 }
 
-.b {
-  font-size: 0.875rem;
+.date {
+  /*字體*/
+  --min-size: 96;
+  --max-size: 128;
+  --font-size: calc(
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) * ((100cqw - 320px) / (1920 - 320)));
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  /*位置*/
+  position: relative;
+  align-items: end; /* 子元素靠下對齊 */
+  height: 100%; /* 需設定高度 */
+  text-align: center;
+  padding-right: 2rem;
 }
 
-.c {
-  font-size: 0.625rem;
-  font-weight: 200;
-  line-height: 1.125rem;
+.month {
+  /*位置*/
+}
+.month::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0.9px #974315 solid;
+  transform: rotateZ(45deg);
+  position: absolute;
+  left: 48%;
+  bottom: -18px;
+}
+
+.day {
+  position: absolute;
+  top: 58px;
+  left: 47%;
+}
+
+.week {
+  --min-size: 24;
+  --max-size: 32;
+  --font-size: calc(
+    (var(--min-size) * 1px) + (var(--max-size) - var(--min-size)) *
+      ((100cqw - 320px) / (1920 - 320))
+  );
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  line-height: clamp(32px, 10vw, 32px);
+  position: relative;
+  left: 3.5rem;
+  bottom: 30px;
+}
+
+#rundown .row {
+  height: 54px;
+}
+
+.time {
+  font-size: calc(2.5rem + 1.5vw);
+}
+.time span {
+  font-size: 1.375rem;
+}
+
+.rundown-detail {
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=all.css.map */
